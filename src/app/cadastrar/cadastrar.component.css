@@ -1,0 +1,11 @@
+#img-bg{
+  background-image: url('https://s2.glbimg.com/gJ9PPo0qCwwINEgxrpgt4WanlT8=/smart/e.glbimg.com/og/ed/f/original/2020/06/30/gettyimages-592601718.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.alinhamento{
+  margin: auto 0
+}
