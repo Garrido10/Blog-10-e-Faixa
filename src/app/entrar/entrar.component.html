@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid ">
   <div class="row d-flex align-items-center">
     <div class="col-md-6">
       <div class="row d-flex justify-content-center">
@@ -9,10 +9,11 @@
             <label for="usuario">Usuário</label>
             <input
               class="form-control"
-              type="text"
+              type="email"
               name="usuario"
               id="usuario"
               placeholder="Seu usuário"
+              required
             />
           </div>
 
@@ -24,6 +25,7 @@
               name="senha"
               id="senha"
               placeholder="Sua senha"
+              required
             />
           </div>
 
@@ -34,7 +36,7 @@
           <hr class="mt-5 mb-5" />
 
           <p class="text-center">
-            Não tem uma conta? <a href="">Cadastre-se</a>
+            Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se</a>
           </p>
         </div>
       </div>

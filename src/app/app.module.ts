@@ -8,6 +8,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
