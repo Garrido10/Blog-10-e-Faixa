@@ -9,11 +9,11 @@
             <label for="usuario">Usuário</label>
             <input
               class="form-control"
-              type="email"
+              type="text"
               name="usuario"
               id="usuario"
               placeholder="Seu usuário"
-              required
+              [(ngModel)]="usuarioLogin.usuario"
             />
           </div>
 
@@ -25,12 +25,12 @@
               name="senha"
               id="senha"
               placeholder="Sua senha"
-              required
+              [(ngModel)]="usuarioLogin.senha"
             />
           </div>
 
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-info">Entrar</button>
+            <button type="submit" class="btn btn-info" (click)='entrar()' >Entrar</button>
           </div>
 
           <hr class="mt-5 mb-5" />
