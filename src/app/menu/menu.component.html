@@ -1,28 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-    aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<nav class="navbar navbar-expand-lg bground">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
-      <li class="nav-item active">
-        <img
-          src="{{foto}}"
-          alt="Logo do Blog" width="50px" height="50px" class="img-fluid rounded-circle" routerLink='/entrar'
-          type="submit">
-      </li>
-      <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white fs-16">{{nome}}</p>
-      </li>
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item active">
+                <img src="{{foto}}" alt="Logo do Blog" width="50px" height="50px" class="img-fluid rounded-circle" routerLink='/entrar' type="submit">
+            </li>
+            <li class="nav-item pl-3">
+                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p>
+            </li>
 
-    </ul>
+        </ul>
 
-    <ul class="navbar-nav ml-auto d-flex align-items-center">
-      <li class="nav-item pl-3">
-        <button btn-dark px-5 >  <a (click)='sair()' class="m-0 font-weight-bold text-dark fs-16">Sair <i class="fa fa-sign-out" aria-hidden=""></i></a> </button>
-      </li>
-    </ul>
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <li class="nav-item pl-3">
+                <button btn-dark px-5 (click)='sair()'>  <a class="m-0 font-weight-bold text-dark fs-16">Sair <i class="fa fa-sign-out" aria-hidden=""></i></a> </button>
+            </li>
+        </ul>
 
-  </div>
+    </div>
 </nav>

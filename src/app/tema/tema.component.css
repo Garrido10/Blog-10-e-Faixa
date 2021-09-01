@@ -1,0 +1,35 @@
+.bground {
+    background: linear-gradient(to bottom, #000000, #404040, #000000);
+}
+
+.but1:hover {
+    background-color: #060743;
+}
+
+.but2:hover {
+    background-color: #060743;
+}
+
+.lh1 {
+    background-color: #060743;
+}
+
+.text {
+    color: #E0A800
+}
+
+.botao {
+    color: #E0A800
+}
+
+.textP {
+    color: #222222
+}
+
+.fs-54 {
+    font-size: 54pt;
+}
+
+.fs-18 {
+    font-size: 18pt;
+}

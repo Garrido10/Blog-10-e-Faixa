@@ -5,3 +5,9 @@
 a{
   cursor: pointer;
 }
+
+.bground {
+  
+  background-image: linear-gradient(to bottom, #010101, #000000 );
+
+  }

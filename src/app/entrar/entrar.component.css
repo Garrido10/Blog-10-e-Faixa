@@ -1,7 +1,17 @@
 #bg-img{
-  background-image: url('https://images.daznservices.com/di/library/GOAL/d5/88/messi_dtsts5810wux1nmb9exd9948p.jpg?t=696842196&quality=100');
+  background-image: url('https://imgur.com/COExSEJ.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 100vh; 
 }
+
+.bground {
+  
+  
+  background-image: linear-gradient(to bottom, #000000, #404040, #000000);
+  }
+
+  .text {
+    color: #E0A800
+  }

@@ -11,17 +11,28 @@ ul.social-network li{
 
 .fa{
   font-size: 35pt;
-  color: white;
+  color: #E0A800;
   padding: 10px;
 }
 .fa-github-square:hover{
-  color: black;
+  color: #0062CC;
 }
 
 .fa-instagram:hover{
-  color: black;
+  color: #0062CC;
 }
 
 .fa-linkedin-square:hover{
-  color: black;
+  color: #0062CC;
 }
+
+.bground {
+  
+  background-image: linear-gradient(to bottom, #000000, #000000 );
+
+  }
+
+  .bground2 {
+  
+    background-image: linear-gradient(to bottom, #000000, #000000 );
+    }

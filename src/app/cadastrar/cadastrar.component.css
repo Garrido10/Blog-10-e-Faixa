@@ -1,5 +1,5 @@
 #img-bg{
-  background-image: url('https://s2.glbimg.com/gJ9PPo0qCwwINEgxrpgt4WanlT8=/smart/e.glbimg.com/og/ed/f/original/2020/06/30/gettyimages-592601718.jpg');
+  background-image: url('https://imgur.com/qEdh6eV.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -9,3 +9,13 @@
 .alinhamento{
   margin: auto 0
 }
+
+.bground {
+  
+  
+  background-image: linear-gradient(to bottom, #000000, #404040, #000000);
+  }
+
+  .text {
+    color: #E0A800
+  }
