@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-md-6 justify-content-center ">
-            <img src="https://imgur.com/6BjMg9w.jpg" alt="imagem" height="663px" width="620" mr-20>
+            <img src="https://imgur.com/49cqEk1.png" alt="imagem" height="663px" width="700" mr-20>
         </div>
 
     </div>
@@ -60,20 +60,22 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" placeholder="Digite o título" />
+                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                        placeholder="Digite o título">
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"
+                        rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Escolha um tema ou
                         <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>
                     </label>
-                    <select name="tema" id="tema" class="form-control">
-                        <option value="">Temas</option>
+                    <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findTemaById()'>
+                        <option *ngFor='let tema of listaTemas' value="{{tema.id}}">{{tema.descricao}}</option>
                     </select>
                 </div>
             </div>
@@ -81,7 +83,8 @@
                 <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">
                     Cancelar
                 </button>
-                <button type="button" class="btn textP btn mr-3 bg-warning"> <b> Publicar </b> </button>
+                <button type="button" class="btn textP btn mr-3 bg-warning" data-dismiss="modal" (click)='publicar()'>
+                    <b> Publicar </b> </button>
             </div>
         </div>
     </div>
@@ -104,29 +107,88 @@
 
             <a class="nav-item nav-link btn textP btn bg-warning font-weight-bolder mr-3" id="postagemTema-tab"
                 data-toggle="tab" href="#postagemTema" role="tab" aria-controls="postagemTema"
-                aria-selected="false">Postagens por tema</a>
+                aria-selected="false">Postagens por Tema</a>
         </div>
     </nav>
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content my-4" id="myTabContent">
+        <!-- Todas postagens -->
+        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+            <div class="card-columns">
+                <div class="card text-center" *ngFor='let item of listaPostagens'>
+                    <div class="card-body">
+                        <h5 class="card-title m-0">{{item.titulo}}</h5>
+                        <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+                        <p class="card-text mt-3">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">
+                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                            </small></p>
+
+                        <p class="card-text"><small class="text-muted">
+                                by: {{item.usuario.usuario}}
+                            </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ! Final Todas postagens -->
+
+        <!-- Minhas postagens -->
+        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+            <div class="card-columns">
+                <div class="card text-center" *ngFor='let item of usuario.postagem'>
+                    <div class="card-body">
+                        <h5 class="card-title m-0">{{item.titulo}}</h5>
+                        <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+                        <p class="card-text mt-3">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">
+                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                            </small></p>
+                        <button class="btn btn-info" [routerLink]="['/postagem-edit', item.id]">Editar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Final Minhas postagens -->
+
+        <!-- Postagens por tema -->
+        <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
+            <div class="card-columns" *ngFor="let tema of listaTemas">
+                <div class="card text-center" *ngFor='let item of tema.postagem'>
+                    <div class="card-body">
+                        <h5 class="card-title m-0">{{item.titulo}}</h5>
+                        <p class="card-text mt-3">{{item.texto}}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                            </small>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <!-- ! Final Postagens por tema -->
+
+        <div class="tab-content" id="myTabContent d-flex justify-content-center">
+
+            <div class="tab-pane fade show active" id="MinhasPostagens" role="tabpanel"
+                aria-labelledby="MinhasPostagens-tab">
+                Reveja o que você compartilhou
+            </div>
+
+            <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+                Divirta-se com as postagens da galera
+            </div>
+
+            <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="postagemTema-tab">
+                Escolha quais postagens deseja ler conforme seus temas
+            </div>
+        </div>
     </div>
 
-
-<div class="tab-content" id="myTabContent d-flex justify-content-center">
-    <div class="tab-pane fade show active" id="MinhasPostagens" role="tabpanel" aria-labelledby="MinhasPostagens-tab">
-        Reveja o que você compartilhou
-    </div>
-
-    <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-        Divirta-se com as postagens da galera
-    </div>
-
-    <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="postagemTema-tab">
-        Escolha quais postagens deseja ler conforme seus temas
-    </div>
-</div>
-</div>
-
-
-<br />
-<!-- Postagens Fim -->
+  

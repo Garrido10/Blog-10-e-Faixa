@@ -15,24 +15,24 @@ ul.social-network li{
   padding: 10px;
 }
 .fa-github-square:hover{
-  color: #0062CC;
+  color: #FFFFFF;
 }
 
 .fa-instagram:hover{
-  color: #0062CC;
+  color: #FFFFFF;
 }
 
 .fa-linkedin-square:hover{
-  color: #0062CC;
+  color: #FFFFFF;
 }
 
 .bground {
   
-  background-image: linear-gradient(to bottom, #000000, #000000 );
+  background-image: linear-gradient(to bottom, #202020, #090909 );
 
   }
 
   .bground2 {
   
-    background-image: linear-gradient(to bottom, #000000, #000000 );
+    background-image: linear-gradient(to bottom, #0E0E0E, #000000 );
     }
