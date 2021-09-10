@@ -15,9 +15,10 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+
  
   getAllTemas(): Observable<Tema[]>{
-    return this.http.get<Tema[]>('https://fgsjc.herokuapp.com/temas')
+    return this.http.get<Tema[]>('https://fgsjc.herokuapp.com/temas', this.token)
   }
 
   getTemaById(id: number): Observable<Tema>{

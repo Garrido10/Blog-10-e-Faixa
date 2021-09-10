@@ -1,13 +1,13 @@
-<div class="container bground mb-5 mt-5">
+<div class="container-fluid bground">
 
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h1 class="text-center text-secondary">Editar Tema</h1>
+    <div class="row mb-3 mt-10 d-flex justify-content-center">
+      <div class="col-md-6 mt-10 ">
+        <h1 class="text-center mt-10 fs-54">Editar Tema</h1>
       </div>
     </div>
   
-    <div class="row mb-3">
-      <div class="col-md-12">
+    <div class="row mb-3 d-flex justify-content-center">
+      <div class="col-md-3">
         <input type="text" class="form-control" id="descricao" name="descricao" [(ngModel)]='tema.descricao'>
       </div>
     </div>
@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-md-12 d-flex justify-content-center">
         <button class="btn btn-danger mr-4" routerLink='/tema' >Cancelar</button>
-        <button class="btn btn-success" (click)='atualizar()'>Editar</button>
+        <button class="btn btn-warning" (click)='atualizar()'> <b> Editar </b> </button>
       </div>
     </div>
   

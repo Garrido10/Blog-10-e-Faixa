@@ -38,8 +38,11 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+
+
     this.findAllTemas()
     this.getAllPostagens()
+    this.getAllTemas()
   }
 
   getAllTemas() {
@@ -75,7 +78,7 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso')
+      alert('Postagem feita!')
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
